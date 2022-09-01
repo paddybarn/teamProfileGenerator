@@ -1,0 +1,5 @@
+const generateHTML = function({}) {
+    return (
+        `
+        `
+    )}
