@@ -1,10 +1,9 @@
 const inquirer = require("inquirer")
 const fs = require("fs")
-const Employee = require("./classes/Employee.js")
 const Engineer = require("./classes/Engineer.js")
 const Intern = require("./classes/Intern.js")
 const Manager = require("./classes/Manager.js")
-const generateHTML = require("./src/generateHTML.js")
+const generateHTML = require("./utils/generateHTML.js")
 
 const team = []
 const init = () => {
@@ -43,20 +42,22 @@ const anotherTeamMember = () => {
             type: "list",
             message: "Which employee profile would you like to generate?",
             name: "nextEmployee",
-            choices: ["Engineer", "Intern", "Finished generating"],
+            choices: ["Engineer", "Intern", "Generate Team"],
             
         }
     ]) .then ((next) => {
-        console.log(next)
+        
+       
             if(next.nextEmployee === "Engineer") {
                 return generateEngineer()
             } else if(next.nextEmployee === "Intern") {
                 return generateIntern()
-            } else if(next.nextEmployee === "Finished generating")
-            return console.log(team)
+            } else if(next.nextEmployee === "Generate Team"){
+            console.log(team)
             const HTML = generateHTML (team)
-            fs.writeFile(".dist/index.html", HTML, (err) => err ? console.log("You missed some fields, please start over") : console.log("HTML generated"))
-    })
+            fs.writeFile("./dist/index.html", HTML, (err) => err ? console.log("You missed some fields, please start over") : console.log("HTML generated"))
+            
+}})
 }
 
 const generateEngineer = () => {

@@ -10,17 +10,20 @@ const generateHTML = function({team}) {
             rel="stylesheet"
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
           <link rel="stylesheet" href="./assets/css/style.css"/>
-            <title>Weather Dashboard</title>
+            <title>Team</title>
         </head>
         <body>
 
     <header class="jumbotron jumbotron-fluid bg-primary text-white">
-          <h1 class="display-4">My Team</h1>
+          <h1 class="d-flex justify-content-center">My Team</h1>
         </div>
     </header>
 
         <main>
             <div class= "team container">
+            <div class="card" style="width: 18rem;">
+            <div class="card-body">
+            <h5 class="card-title">${team}</h5>
             </div>
         </main>
 
