@@ -4,6 +4,7 @@ const Employee = require("./classes/Employee.js")
 const Engineer = require("./classes/Engineer.js")
 const Intern = require("./classes/Intern.js")
 const Manager = require("./classes/Manager.js")
+const generateHTML = require("./src/generateHTML.js")
 
 const team = []
 const init = () => {
@@ -29,11 +30,9 @@ const init = () => {
             name: "managerOfficeNumber"
         },
     ])  .then ((emp) => {
-        console.log("logging" + emp)
         const {managerName, mangerId, managerEmail, managerOfficeNumber} = emp
         const manager = new Manager (managerName, mangerId, managerEmail, managerOfficeNumber)
         team.push(manager)
-        // console.log(team)
         anotherTeamMember()
     })
 }
@@ -54,7 +53,9 @@ const anotherTeamMember = () => {
             } else if(next.nextEmployee === "Intern") {
                 return generateIntern()
             } else if(next.nextEmployee === "Finished generating")
-            return generateHTML()
+            return console.log(team)
+            const HTML = generateHTML (team)
+            fs.writeFile(".dist/index.html", HTML, (err) => err ? console.log("You missed some fields, please start over") : console.log("HTML generated"))
     })
 }
 
