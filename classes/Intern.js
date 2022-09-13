@@ -7,8 +7,7 @@ class Intern extends Employee {
     }
 }
 
-const test = new Intern ("Carl", 4, "int@email.com", "Dartmouth")
+const test = new Intern ("Carl", 7, "int@email.com", "Dartmouth")
 
-console.log(test)
 
 module.exports = Intern

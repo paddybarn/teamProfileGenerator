@@ -7,7 +7,7 @@ class Employee {
     }
 }
 
-const test = new Employee ("Patrick", "1", "me@mail.com", "CEO")
-console.log(test)
+const test = new Employee ("Patrick", 9, "me@mail.com", "CEO")
+
 
 module.exports = Employee

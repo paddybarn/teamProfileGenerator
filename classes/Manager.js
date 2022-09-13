@@ -7,8 +7,7 @@ class Manager extends Employee {
     }
 }
 
-const test = new Manager ("Joe", 2, "you@email.com", 2)
+const test = new Manager ("Joe", 6, "you@email.com", 2)
 
-console.log(test)
 
 module.exports = Manager

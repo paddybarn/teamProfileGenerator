@@ -14,7 +14,7 @@ const init = () => {
             name: "managerName"
         },
         {
-            type: "input",
+            type: "number",
             message: "Enter Employee ID",
             name: "managerId"
         },
@@ -24,7 +24,7 @@ const init = () => {
             name: "managerEmail"
         },
         {
-            type: "input",
+            type: "number",
             message: "Enter Office Number",
             name: "managerOfficeNumber"
         },
@@ -47,13 +47,12 @@ const anotherTeamMember = () => {
         }
     ]) .then ((next) => {
         
-       
+            console.log(team)
             if(next.nextEmployee === "Engineer") {
                 return generateEngineer()
             } else if(next.nextEmployee === "Intern") {
                 return generateIntern()
             } else if(next.nextEmployee === "Generate Team"){
-            console.log(team)
             const HTML = generateHTML (team)
             fs.writeFile("./dist/index.html", HTML, (err) => err ? console.log("You missed some fields, please start over") : console.log("HTML generated"))
             
@@ -68,7 +67,7 @@ const generateEngineer = () => {
                 name: "engineerName"
             },
             {
-                type: "input",
+                type: "number",
                 message: "Enter Employee ID",
                 name: "engineerId"
             },
@@ -98,7 +97,7 @@ const generateIntern = () => {
                 name: "internName"
             },
             {
-                type: "input",
+                type: "number",
                 message: "Enter Intern ID",
                 name: "internId"
             },
